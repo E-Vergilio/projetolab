@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcular o fatorial de um número</title>
+</head>
+<body>
+
+<script>
+// Função para calcular o fatorial de um número
+function calcularFatorial(numero) {
+    // Verificar se o número é 0 ou 1
+    if (numero === 0 || numero === 1) {
+        return 1;
+    }
+    // Calcular o fatorial
+    var resultado = 1;
+    for (var i = 2; i <= numero; i++) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+// Função principal para solicitar ao usuário um número e calcular o fatorial
+function solicitarNumeroECalcularFatorial() {
+    // Solicitar ao usuário um número inteiro positivo
+    var numero = prompt("Digite um número inteiro positivo:");
+
+    // Verificar se o número é válido e se é um número inteiro positivo
+    if (numero !== null && numero !== "" && !isNaN(numero) && Number.isInteger(parseFloat(numero)) && parseInt(numero) >= 0) {
+        numero = parseInt(numero); // Convertendo para número inteiro
+
+        // Calcular o fatorial do número usando a função calcularFatorial
+        var fatorial = calcularFatorial(numero);
+        alert("O fatorial de " + numero + " é: " + fatorial);
+    } else {
+        alert("Por favor, digite um número inteiro positivo válido.");
+        solicitarNumeroECalcularFatorial(); // Chamar a função novamente se o número não for válido
+    }
+}
+
+// Chamar a função para iniciar o processo
+solicitarNumeroECalcularFatorial();
+</script>
+
+</body>
+</html>

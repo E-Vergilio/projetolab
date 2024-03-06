@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar se um número é par ou ímpar</title>
+</head>
+<body>
+
+<script>
+// Função para verificar se um número é par ou ímpar
+function verificarParOuImpar() {
+    // Solicitar ao usuário um número inteiro positivo
+    var numero = prompt("Digite um número inteiro positivo:");
+
+    // Verificar se o número é válido e se é um número inteiro positivo
+    if (numero !== null && numero !== "" && !isNaN(numero) && Number.isInteger(parseFloat(numero)) && parseInt(numero) >= 0) {
+        numero = parseInt(numero); // Convertendo para número inteiro
+
+        // Verificar se o número é par ou ímpar
+        if (numero % 2 === 0) {
+            alert(numero + " é um número PAR.");
+        } else {
+            alert(numero + " é um número ÍMPAR.");
+        }
+    } else {
+        alert("Por favor, digite um número inteiro positivo válido.");
+        verificarParOuImpar(); // Chamar a função novamente se o número não for válido
+    }
+}
+
+// Chamar a função para iniciar o processo
+verificarParOuImpar();
+</script>
+
+</body>
+</html>

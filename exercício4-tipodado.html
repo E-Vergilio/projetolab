@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar Tipo de Dado</title>
+</head>
+<body>
+
+<script>
+// Função para solicitar ao usuário a entrada de um dado via teclado
+function solicitarDado() {
+    var dado = prompt("Digite um dado:");
+
+    // Verificar se o usuário inseriu algum dado
+    if (dado !== null && dado !== "") {
+        // Perguntar ao usuário se ele deseja verificar o tipo de dado informado
+        var verificarTipo = confirm("Você deseja verificar o tipo de dado informado?");
+        if (verificarTipo) {
+            // Escrever o tipo de dado no corpo da página
+            document.body.innerHTML = "<h2>O tipo de dado informado é: " + typeof dado + "</h2>";
+        } else {
+            // Escrever uma mensagem de agradecimento na tela
+            document.body.innerHTML = "<h2>Obrigado por visitar esta página, curioso!</h2>";
+        }
+    } else {
+        // Caso o usuário não tenha inserido nenhum dado
+        alert("Por favor, digite algum dado.");
+        solicitarDado(); // Chamar a função novamente para solicitar o dado
+    }
+}
+
+// Chamar a função para iniciar o processo
+solicitarDado();
+</script>
+
+</body>
+</html>

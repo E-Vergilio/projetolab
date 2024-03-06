@@ -1,0 +1,14 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: bisque;
+}
+
+h1 {
+    color: #9741ee;
+    text-align: center;
+    font-size: medium;
+}
+
+p {
+    color: #f3ccf0;
+}

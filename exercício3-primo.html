@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar se um número é primo</title>
+</head>
+<body>
+
+<script>
+// Função para verificar se um número é primo
+function verificarPrimo(numero) {
+    // Verificar se o número é menor ou igual a 1
+    if (numero <= 1) {
+        return false;
+    }
+    // Verificar se o número é divisível apenas por 1 e por ele mesmo
+    for (var i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Função principal para solicitar ao usuário um número e verificar se é primo
+function solicitarNumeroEVerificarPrimo() {
+    // Solicitar ao usuário um número inteiro positivo
+    var numero = prompt("Digite um número inteiro positivo:");
+
+    // Verificar se o número é válido e se é um número inteiro positivo
+    if (numero !== null && numero !== "" && !isNaN(numero) && Number.isInteger(parseFloat(numero)) && parseInt(numero) >= 0) {
+        numero = parseInt(numero); // Convertendo para número inteiro
+
+        // Verificar se o número é primo usando a função verificarPrimo
+        if (verificarPrimo(numero)) {
+            alert(numero + " é um número PRIMO.");
+        } else {
+            alert(numero + " não é um número PRIMO.");
+        }
+    } else {
+        alert("Por favor, digite um número inteiro positivo válido.");
+        solicitarNumeroEVerificarPrimo(); // Chamar a função novamente se o número não for válido
+    }
+}
+
+// Chamar a função para iniciar o processo
+solicitarNumeroEVerificarPrimo();
+</script>
+
+</body>
+</html>
