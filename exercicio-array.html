@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário Dinâmico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cadastro de Nomes</h1>
+  <form id="nomeForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Nomes Cadastrados:</h2>
+  <ol id="listaNomes">
+  </ol>
+
+  <script>
+    const nomes = [];
+
+    const form = document.getElementById('nomeForm');
+    const listaNomes = document.getElementById('listaNomes');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const nomeInput = document.getElementById('nome');
+      const nome = nomeInput.value.trim();
+
+      if (nome) {
+        nomes.push(nome);
+        atualizarLista();
+        nomeInput.value = '';
+      } else {
+        alert('Por favor, insira um nome válido.');
+      }
+    });
+
+    function atualizarLista() {
+      // Ordenacao em ordem alfabética
+      nomes.sort();
+
+      // clear list 
+      listaNomes.innerHTML = '';
+
+      // Adiciona nomes
+      nomes.forEach(function(nome) {
+        const itemLista = document.createElement('li');
+        itemLista.textContent = nome;
+        listaNomes.appendChild(itemLista);
+      });
+    }
+  </script>
+</body>
+</html>
 
