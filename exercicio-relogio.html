@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>A hora é agora !</h1>
+    <p id="horaAtual"></p>
+
+    <script>
+        // Função para formatar os números menores que 10!
+        function formatarNumero(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+        // Função para atualizar o relógio a cada segundo!
+        function atualizarRelogio() {
+            // Obter a data e hora atual
+            let dataAtual = new Date();
+
+            // Obter horas, minutos e segundos
+            let horas = formatarNumero(dataAtual.getHours());
+            let minutos = formatarNumero(dataAtual.getMinutes());
+            let segundos = formatarNumero(dataAtual.getSeconds());
+
+            // Formatar a hora  (HH:MM:SS)
+            let horaFormatada = horas + ':' + minutos + ':' + segundos;
+
+            // Atualizar o texto do elemento HTML com a hora formatada
+            document.getElementById('horaAtual').textContent = horaFormatada;
+
+            // Chamar a função novamente após 1 segundo
+            setTimeout(atualizarRelogio, 1000);
+        }
+
+        // Chamar a função pela primeira vez para iniciar o relógio
+        atualizarRelogio();
+    </script>
+<button onclick="history.back()"class="botao-voltar">Voltar</button>
+</body>
+</html>
