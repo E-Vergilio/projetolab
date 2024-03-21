@@ -1,14 +1,26 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: bisque;
+    background-color: rgb(236, 221, 204);
 }
 
 h1 {
-    color: #9741ee;
+    color: #67095f;
     text-align: center;
     font-size: medium;
 }
 
 p {
-    color: #f3ccf0;
+    color: #67095f;
+}
+       
+ .botao-voltar {
+    background-color: rgb(122, 12, 95); /* Cor de fundo padrão */
+    color: white; /* Cor do texto branco */
+    border: none; /* Remover borda */
+    padding: 5px 10px; /* Adicionar espaço interno */
+    border-radius: 5px; /* Adicionar bordas arredondadas */
+    transition: background-color 0.3s; /* Adicionar transição suave */
+}
+ .botao-voltar:hover {
+    background-color: rgb(39, 162, 62); /* Cor de fundo ao passar o mouse */
 }
